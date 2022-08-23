@@ -2,17 +2,12 @@
  * CSS Variables *
  * * * * * * * * */
 :root {
-    --background-color: #fff;
-    --text-color: #000;
-    --main-color: #444;
-    --highlight-color: #666;
-    --nav-link-color: #fff;
-    --footer-background-color: #444;
+    --dark-blue: #1C3879;
+    --light-blue: #607eaa;
+    --dark-beige: #eae3d2;
+    --light-beige: #f9f5eb;
 }
 
-/* * * * * * * * * * * * 
- *  Tag Global Styles  *
- * * * * * * * * * * * */
 
 html {
     height: 100%;
@@ -20,181 +15,136 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Apply some styles to the entire page */
 html,
 body {
     /* Change the font */
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     height: 100%;
     width: 100%;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-/*
- * You'd be surprised by how just
- * a little boldness and text
- * styles can make your website
- * look instantly better! */
-h1,
-h2 {
-    font-weight: 700;
-    font-size: 36px;
-}
-
-h3 {
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--main-color);
+    background-color: var(--light-beige);
+    color: var(--dark-blue);
 }
 
 p {
-    font-size: 18px;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.48em;
+    /* identical to box height */
 }
 
-a {
-    color: var(--main-color);
-}
-
-a:hover {
-    color: var(--highlight-color);
-}
-
-/* * * * * * * * * * * * * 
- *  Bootstrap Overrides  *
- * * * * * * * * * * * * */
-
-/* Make the navbar pretty */
-.navbar {
-    position: absolute;
-    z-index: 1;
-}
-
-.navbar .navbar-brand {
-    margin-left: 60px;
-    margin-right: 80px;
-    font-size: 36px;
+h1 {
+    font-family: 'Georgia';
+    font-style: normal;
     font-weight: 700;
-    color: var(--nav-link-color);
+    font-size: 2.5em;
+    line-height: .754em;
 }
 
-.navbar .navbar-brand:hover {
-    color: var(--main-color);
-    transition: 0.25s all;
+h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: .754em;
 }
 
-.navbar .navbar-nav .nav-link {
-    color: var(--nav-link-color);
-    margin-right: 30px;
-    font-size: 18px;
-    transition: 0.25s all;
+.header {
+    width: auto;
+    left: 0%;
+    right: 0%;
+    height: 6em;
+    background-color: var(--light-blue);
+    box-shadow: 0 .1em .5em 0 rgb(0 0 0 / 16%), 0 .1px 1em 0 rgb(0 0 0 / 12%);
 }
 
-.navbar .navbar-nav .nav-link:hover {
-    color: var(--main-color);
-    transition: 0.25s all;
-}
-
-/* * * * * * * * * * * * * *
- *  Custom Global Classes  *
- * * * * * * * * * * * * * */
-
-.btn-accent {
-    color: var(--background-color);
-    background-color: var(--main-color);
-}
-
-.btn-accent:hover {
-    background-color: var(--highlight-color);
-}
-
-/* * * * * * * * * * *
- *  Content Styles   *
- * * * * * * * * * * */
-
-/* Hero section */
-#hero {
-    /* define spacing and sizing here */
-    position: relative;
-    width: 100%;
-    height: 80%;
-    margin-bottom: 50px;
-}
-
-#hero > div {
-    /* Replace the URL with your own image */
-    background: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
-        url(https://news.usc.edu/files/2016/06/GR42877_web.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
-#hero > div > .text {
-    /* Horizontal + Vertical center */
-    color: var(--background-color);
-    text-align: center;
+.footer {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 0;
+    width: auto;
+    left: 0%;
+    right: 0%;
+    height: 4em;
+    background-color: var(--dark-beige);
+    border-top: 1px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: var(--dark-blue);
+    border-style: solid
 }
 
-/* About section */
-#about {
-    margin-bottom: 50px;
+.nav-item:hover {
+    background-color: var(--dark-blue);
+    cursor: pointer;
 }
 
-#blurb {
-    margin-bottom: 50px;
+.nav-item-selected {
+    background-color: var(--dark-blue);
+    color: var(--dark-beige);
 }
 
-/* Skills section */
-#skills {
-    margin-bottom: 50px;
-}
-
-#skills .row {
+.nav-item {
+    padding-left: 2em;
+    padding-right: 2em;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* Gallery section */
-#gallery {
-    margin-bottom: 50px;
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contact section */
-#contact {
-    margin-bottom: 50px;
+.social-button>a {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-footer {
-    text-align: center;
-    padding: 50px;
-    color: var(--background-color);
-    background: var(--footer-background-color);
-}
 
-footer a, footer a:hover {
-    color: var(--background-color);
+.nav-item>h2>a {
+    color: var(--light-beige);
     text-decoration: none;
 }
 
-/* Responsiveness */
-@media only screen and (max-width: 600px) {
-    h1,
-    h2 {
-        font-size: 28px;
-    }
-
-    .navbar-brand {
-        margin-left: 0;
-        font-size: 28px;
-    }
+.body {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 4em;
 }
 
-@media only screen and (max-width: 360px) {
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+
+.body-container {
+    justify-content: center;
+    gap: 4em;
+    padding-top: 5em;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5em;
+}
+
+.footer-container {
+    justify-content: space-between;
+}
+
+.no-margins {
+    margin: 0 0 0 0;
+}
+
+.tiny-font-size {
+    font-size: 0.75em;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
 }

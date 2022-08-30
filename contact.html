@@ -34,8 +34,28 @@
     <script type="text/javascript">
         window.onload = function () {
             document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                emailjs.sendForm('service_9ctv8aa', 'template_gipefj4', this);
+                var response = grecpatcha.getResponse();
+                if (response.length === 0) {
+                    document.getElemetById('captcha-form').style.display = 'block';
+                    document.getElementById('success-form').style.display = 'none';
+                    document.getElementById('error-form').style.display = 'none';
+                }
+                else {
+                    emailjs.sendForm('service_9ctv8aa', 'template_gipefj4', this)
+                        .then(function () {
+                            document.getElementById('success-form').style.display = 'block';
+                            document.getElementById('submit-button').style.display = 'none';
+                            document.getElemetById('captcha-form').style.display = 'none';
+                            document.getElementById('error-form').style.display = 'none';
+
+                        }, function (error) {
+                            document.getElementById('error-form').style.display = 'block';
+                            document.getElementById('submit-button').style.display = 'none';
+                            document.getElemetById('captcha-form').style.display = 'none';
+                            document.getElementById('success-form').style.display = 'none';
+                        });
+                }
+
             });
         }
     </script>
@@ -66,19 +86,28 @@
 
 
         <div class="body">
-            <form id="contact-form" class="form-style">
+            <form id="contact-form" class="form-style" method="post">
                 <div class="form-container">
-                    <div class="submit-form">
+                    <div class="centered-form">
                         <h2>Contact Me!</h2>
                     </div>
                     <input type="text" name="name" placeholder="Name">
                     <input type="email" name="email" placeholder="Email">
                     <textarea name="message" placeholder="Message"></textarea>
-                    <div class="submit-form">
+                    <div class="centered-form">
                         <div class="g-recaptcha" data-sitekey="6Ld0wLwhAAAAAMKhIPOWg8pzAeXbp8zAV1ISVYqi"></div>
                     </div>
-                    <div class="submit-form">
+                    <div class="centered-form" id="submit-button">
                         <input type="submit" value="Send">
+                    </div>
+                    <div id="success-form" class="centered-form">
+                        Sent!
+                    </div>
+                    <div id="error-form" class="centered-form">
+                        Error - please email leon.durrenberger@gmail.com instead!
+                    </div>
+                    <div id="captcha-form" class="centered-form">
+                        Error - please complete CAPTCHA.
                     </div>
                 </div>
             </form>

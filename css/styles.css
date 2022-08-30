@@ -298,7 +298,7 @@ textarea {
     align-items: stretch;
 }
 
-.submit-form {
+.centered-form {
     display: flex;
     justify-content: center;
     margin-top: 1em;
@@ -312,4 +312,18 @@ textarea {
     margin-right: 20em;
     margin: 2em 20em 2em 20em;
     padding: 1em;
+}
+
+#success-form {
+    display: none;
+}
+
+#error-form {
+    display: none;
+    color: rgb(163, 82, 82);
+}
+
+#captcha-form {
+    display: none;
+    color: rgb(163, 82, 82);
 }

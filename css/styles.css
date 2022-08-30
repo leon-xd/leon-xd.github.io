@@ -291,9 +291,6 @@ textarea {
     color: var(--dark-blue);
 }
 
-
-
-
 .form-container {
     display: flex;
     flex-direction: column;

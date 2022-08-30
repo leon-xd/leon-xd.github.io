@@ -21,32 +21,99 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <link href="./css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('ijon4QgwSlE1G_6RA');
+        })();
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                emailjs.sendForm('service_9ctv8aa', 'template_gipefj4', this);
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <header class="d-flex justify-content-center header">
-        <ul class="nav">
-            <li class="nav-item">
-                <h2><a href="index.html">about</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="project.html">projects</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="experience.html">experience</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="resume.html">resume</a></h2>
-            </li>
-            <li class="nav-item nav-item-selected">
-                <h2>contact</h2>
-            </li>
-        </ul>
-    </header>
+    <div class="page-container">
+
+        <header class="d-flex justify-content-center header">
+            <ul class="nav">
+                <li class="nav-item">
+                    <h2><a href="index.html">about</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="project.html">projects</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="experience.html">experience</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="resume.html">resume</a></h2>
+                </li>
+                <li class="nav-item nav-item-selected">
+                    <h2>contact</h2>
+                </li>
+            </ul>
+        </header>
 
 
-    <div class="body">
+        <div class="body">
+            <form id="contact-form" class="form-style">
+                <div class="form-container">
+                    <div class="submit-form">
+                        <h2>Contact Me!</h2>
+                    </div>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <div class="submit-form">
+                        <div class="g-recaptcha" data-sitekey="6Ld0wLwhAAAAAMKhIPOWg8pzAeXbp8zAV1ISVYqi"></div>
+                    </div>
+                    <div class="submit-form">
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
+            </form>
+        </div>
 
+        <footer class="d-flex justify-content-center footer">
+            <div class="container footer-container">
+                <div>
+                    <p class="no-margins tiny-font-size">Website made from scratch :D</p>
+                </div>
+                <ul class="nav">
+                    <li class="social-button">
+                        <a href="https://www.instagram.com/leon.durrenberger/?hl=en" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-instagram-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://www.linkedin.com/in/leon-durrenberger-a718b7167/" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-linkedin-circled-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://github.com/leon-xd" target="_blank" rel="noopener noreferrer">
+                            <img src="img\icons8-github-30.png">
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <p class="no-margins tiny-font-size">© 2022</p>
+                </div>
+            </div>
+
+
+        </footer>
     </div>
-
 </body>

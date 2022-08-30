@@ -8,6 +8,11 @@
     --light-beige: #f9f5eb;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
 
 html {
     height: 100%;
@@ -250,4 +255,64 @@ h3 {
 
 .margin-top-1em {
     margin-top: 1em;
+}
+
+input {
+    background-color: var(--light-beige);
+    color: var(--dark-blue);
+    padding: .6em;
+    margin: .5em 0;
+    border: 0;
+    box-shadow: 0 0 1em .25em rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+}
+
+input[type=text] {
+    margin: 1em 0 .5em 0;
+}
+
+
+input[type=submit] {
+    width: 5em;
+    background-color: var(--light-blue);
+    color: var(--light-beige);
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 1em;
+    border-radius: 1em;
+    border: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 10em;
+    margin: .5em 0;
+    background-color: var(--light-beige);
+    color: var(--dark-blue);
+}
+
+
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.submit-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.form-style {
+    background-color: var(--dark-beige);
+    border-radius: 1em;
+    margin-top: 2em;
+    margin-left: 20em;
+    margin-right: 20em;
+    margin: 2em 20em 2em 20em;
+    padding: 1em;
 }

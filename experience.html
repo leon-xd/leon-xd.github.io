@@ -16,7 +16,7 @@
     <!-- Change the favicon (tab icon) -->
     <link rel="icon" href="./img/favicon.ico" />
     <!-- Change the tab title -->
-    <title>My Personal Website</title>
+    <title>Leon Xin Durrenberger</title>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
@@ -24,29 +24,322 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-center header">
-        <ul class="nav">
-            <li class="nav-item">
-                <h2><a href="index.html">about</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="project.html">projects</a></h2>
-            </li>
-            <li class="nav-item nav-item-selected">
-                <h2>experience</h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="resume.html">resume</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="contact.html">contact</a></h2>
-            </li>
-        </ul>
-    </header>
+    <div class="page-container">
+        <header class="d-flex justify-content-center header">
+            <ul class="nav">
+                <li class="nav-item ">
+                    <h2><a href="index.html">about</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="project.html">projects</a></h2>
+                </li>
+                <li class="nav-item nav-item-selected">
+                    <h2>experience</h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="resume.html">resume</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="contact.html">contact</a></h2>
+                </li>
+            </ul>
+        </header>
 
 
-    <div class="body">
+        <div class="body">
+            <div class="sidebar">
+                <a onclick="ActivateClass(this)" class="active" href="#overview">Overview</a>
+                <a onclick="ActivateClass(this)" href="#microsoft">Microsoft</a>
+                <a onclick="ActivateClass(this)" href="#makers">USC Makers</a>
+                <a onclick="ActivateClass(this)" href="#356">CSCI 356</a>
+                <a onclick="ActivateClass(this)" href="#170">CSCI 170</a>
+                <a onclick="ActivateClass(this)" href="#nexstream">Nexstream</a>
+                <a onclick="ActivateClass(this)" href="#davenport">Davenport</a>
+                <a onclick="ActivateClass(this)" href="#dataemerge">DataEmerge</a>
+            </div>
+            <div class="content">
+                <div id="overview">
+                    <h1>Overview</h1>
+                    <p>
+                        Below is a summary of my professional career up to this point.
+                    </p>
+                </div>
+                <hr>
+                <div id="microsoft">
+                    <h1>Microsoft Devices</h1>
+                    <p>
+                        Unfortunately, I cannot divulge too many details about my work at Microsoft. Here are brief
+                        summaries of my internships:
+                    </p>
+                    <h2>May 2022 - Aug 2022</h2>
+                    <h3>Software Engineering Intern for XP Power Team</h3>
+                    <p>
+                        My second internship at Microsoft involved building an internal tool for the Cross-Platform
+                        Power Team.
+                        For this tool, I designed and implemented a pipeline that synthesized and analyzed data
+                        involving High-Power Scenarios from devices that were under development.
+                        To complete my project, I had to learn a multitude of internal tools and frameworks.
+                        I developed primarily using C#, utilizing OOP to write extensible code that the team still uses
+                        today.
+                    </p>
+                    <h2>May 2021 - Aug 2021</h2>
+                    <h3>Hardware Engineering Intern for MTE Software Team</h3>
+                    <p>
+                        My first internship at Microsoft involved automating a key part of the Devices manufacturing
+                        testing procedure.
+                        By utilizing OpenCV and Python, I was able to build a program that automated keyboard backlight
+                        testing for quality assurance.
+                        I also designed and implemented a user interface for my program using the Tkinter library.
+                    </p>
+                </div>
+                <hr>
+                <div id="makers">
+                    <h1>USC Makers</h1>
+                    <p>
+                        This section details the organizational efforts that I have put into the
+                        club I was a part of in college, USC Makers. For details on the technical efforts that I have
+                        put into projects with the club, please refer to the Projects section of my website.
+                    </p>
+                    <h2>May 2021 - May 2022</h2>
+                    <h3 class="margin-top-1em">President</h3>
+                    <p>
+                        My experience as President of USC Makers was a great taste of management and leadership.
+                        Alongside my co-president,
+                        <a href="https://www.linkedin.com/in/jenny-lee-6b23a7152/" target="_blank"
+                            rel="noopener noreferrer">Haemin (Jenny) Lee</a>, I managed an
+                        Elected Board (E-board) of 12 people through an entire year of the club.
+                        The club had grown to a size larger than ever, with over 90 people, nine year-long projects, and
+                        four semester-long projects.
+                        As president, I managed roles overseeing projects, tutorials, finances, outreach, recruitment,
+                        internal logistics, social events, and marketing through weekly meetings.
+                    </p>
+                    <p>
+                        Highlights:
+                    </p>
+                    <p>
+                    <ul>
+                        <li>
+                            During our tenure as Presidents, we managed the planning and hosting of two external
+                            Showcases at the end of each semester, where we showed off progress on our projects in a
+                            beginner-friendly manner.
+                        </li>
+                        <li>
+                            We also utilized connections throughout industry in order to obtain Makers' first corporate
+                            sponsorships: we recieved donations from Microsoft and Qualcomm.
+                        </li>
+                        <li>
+                            Utilizing our connections throughout USC, we were able to acquire our first independent
+                            storage space on campus. This led to the creation of a new E-board role in order to manage
+                            the space we were allocated, which was also ideated and executed.
+                        </li>
+                        <li>
+                            Additionally, we coordinated with alumni and industry connections to host four Design
+                            Reviews for projects throughout the year.
+                        </li>
+                        <li>
+                            The beginning of each semester drove us to manage a two-step recruitment
+                            process involving all of E-board, allowing over 30 more Makers to join the club.
+                        </li>
+                        <li>
+                            We also managed the cultivation of our tight community, where we held over 20 social events
+                            to encourage Makers to socialize.
+                        </li>
 
+                    </ul>
+                    </p>
+                    <p>
+                        Being at the head of an organization that produced 13 hardware projects with a headcount of over
+                        90 people was an absolutely incredible experience to have as an undergrad.
+
+                        Getting a glimpse at what leadership means in both an engineering context and an interpersonal
+                        context helped me grow immensely, and I can now truly say that I love building and growing
+                        organizations because of my first-hand experience.
+                    </p>
+                    <p>
+                        Relevant links:
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=D4UEuHunAZU&t=5006s&ab_channel=USCMakers"
+                                target="_blank" rel="noopener noreferrer">Fall Showcase Zoom Recording</a>
+                        </li>
+                        <li>
+                            Spring Showcase Recording (COMING SOON)
+                        </li>
+                        <li>
+                            <a href="" download target="_blank" rel="noopener noreferrer">Makers 2021-2022 Summary</a>
+                        </li>
+                    </ul>
+                    <h2>May 2020 - May 2021</h2>
+                    <h3>Director of Membership</h3>
+                    <p>
+                        As the Director of Membership of Makers my junior year, I had a few responsibilities to handle.
+                        First, I had to lead two recruitment cycles involving all of E-board to let new members into the
+                        club.
+                        Second, I had to onboard and represent the new members as they got acclimated to the club.
+                        Third, I was in charge of DEI efforts for Makers leadership.
+                        Fourth, I was in charge of organizing the process of gaining feedback from all members of the
+                        club after each semester.
+                        Finally, I acted as the point person to resolve interpersonal conflicts within the club's
+                        membership and leadership, and was one of the key people in charge of maintaining the Makers
+                        community during the virtual semester.
+                    </p>
+                    <p>
+                        I worked as hard as I could to make sure that my impact on my job went above and beyond what was
+                        expected of the role.
+                        To start, I completely overhauled the old process of recruitment by focusing on standardizing
+                        the recruitment process as much as possible.
+                        This came in the form of several improvements through the review of application & interview
+                        portions of recruitment.
+                        First, I separated E-board reviews into separate spreadsheets so that user bias would not be
+                        affected.
+                        Second, I wrote a rubric for the application process.
+                        Third, I changed the rhythm of interviews to give feedback before discussing with other E-board
+                        members.
+                        Fourth, I wrote a <a href="https://github.com/leon-xd/bias_visualizer" target="_blank"
+                            rel="noopener noreferrer">Python script to attempt to negate grader bias</a> during the
+                        application phase.
+                        Finally, I specified and delineated what values we were looking for in potential Makers to
+                        assist us in making judgements.
+                    </p>
+                    <p>
+                        In addition to recruitment, I expanded the other areas of my role as well.
+                        I started an anonymous feedback form so that members of the club could provide feedback to us
+                        without risking their personal identity.
+                        Additionally, I started an annual DEI seminar for leadership (all Project Managers and E-board)
+                        to ensure that everyone was operating with values that are key to the smooth operation of the
+                        club.
+                        Finally, I helped to plan, film, and host our club's Spring Showcase, which was streamed live on
+                        YouTube to a large virtual audience.
+                    </p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vPM-rD34ycs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        The work that I did this year was extremely gratifying, as holding the community together during
+                        the virtual school year was a challenging yet necessary problem to solve.
+                        This year taught me how difficult it is to manage and cultivate a community, and it helped me to
+                        get introduced to leadership in order to progress through to my next role in Makers.
+                    </p>
+
+                    <h2>September 2019 - May 2020</h2>
+                    <h3>Associate Director of Programming</h3>
+                    <p>
+                        As the Associate Director of Programming, my responsibility was to assist with tutorials that
+                        educated club members in a variety of technical topics.
+                        Through this role, I assisted with the creation, lecturing, and questions for tutorials spanning
+                        Arduino, Raspberry Pis, CAD, audio processing, and PCB design.
+                    </p>
+                </div>
+                <hr>
+                <div id="356">
+                    <h1>CSCI 356: Introduction to Computer Systems</h1>
+                    <h2>Jan 2021 - May 2022</h2>
+                    <h3>Course Producer</h3>
+                    <p>
+                        I assisted with the course CSCI 356, which taught C operations, floating point datatypes,
+                        assembly, computer organization, x86-64, control flow, caching, virtual memory, and dynamic
+                        memory allocation.
+                        My responsibilities included attending lectures, reviewing homeworks, holding
+                        office hours, and grading exams.
+                    </p>
+                </div>
+                <hr>
+                <div id="170">
+                    <h1>CSCI 170: Discrete Methods in Computer Science</h1>
+                    <h2>January 2020 - Dec 2020</h2>
+                    <h3>Course Producer</h3>
+                    <p>
+                        I assisted with the course CSCI 170, which taught discrete math in the context of computer
+                        science.
+                        This includes logic, sets, functions, induction, graphs, and recursion.
+                        My responsibilities included attending lectures, reviewing homeworks, holding
+                        office hours, and grading exams.
+                    </p>
+                </div>
+                <hr>
+                <div id="nexstream">
+                    <h1>Nexstream Technical Institute</h1>
+                    <h2>May 2020 - Aug 2020</h2>
+                    <h3>Web Development & Content Creation Intern</h3>
+                    <p>
+                        Nexstream Technical Institute is an education startup based in San Diego, CA focused on teaching
+                        high schoolers advanced technical topics.
+                        I held two main responsibilities during this internship: helping them get their website for
+                        online courses up and running, and assisting with data science curriculum development.
+                        For the web development, I helped interface with a web development contractor by developing a
+                        Figma board, and managing their requirements list for their website.
+                        For the curriculum development, I helped to develop slides on topics that were related to Python
+                        data science libraries.
+                        I developed & presented slideshows on introductory Python, Matlab, Pandas, Numpy, and Keras.
+                    </p>
+                </div>
+                <hr>
+                <div id="davenport">
+                    <h1>Davenport Aviation</h1>
+                    <h2>May 2019 - Aug 2019</h2>
+                    <h3>Software Engineering Intern</h3>
+                    <p>
+                        Davenport Aviation is a company based in Columbus, OH that has an expertise on exporting plane
+                        parts for foreign airlines.
+                        My responsibility was twofold: developing a Power BI to further develop their KPI interface, and
+                        developing an extension to a service that updates lists of plane parts available via a
+                        third-party inventory software API.
+                        I revamped their KPI while developing business knowledge surrounding the indices that I was
+                        revamping, feeding my curiousity for business and allowing me an inside window into high-level
+                        business processes.
+                        In addition, to update the automated service for inventory management, I utilized the Java
+                        SpringBoot framework, alongside Selenium webscraping, multi-threading, and OOP principles.
+                    </p>
+                </div>
+                <hr>
+                <div id="dataemerge">
+                    <h1>DataEmerge</h1>
+                    <h2>May 2018 - Aug 2018</h2>
+                    <h3>Software Engineering Intern</h3>
+                    <p>
+                        DataEmerge is a small business based out of Columbus, OH that focuses on data migration for
+                        hospitals.
+                        I used C# to develop a testing tool for the data migration software, and learned the Angular.js
+                        framework in order to build a small worker productivity internal tool.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="d-flex justify-content-center footer">
+            <div class="container footer-container">
+                <div>
+                    <p class="no-margins tiny-font-size">Website made from scratch :D</p>
+                </div>
+                <ul class="nav">
+                    <li class="social-button">
+                        <a href="https://www.instagram.com/leon.durrenberger/?hl=en" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-instagram-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://www.linkedin.com/in/leon-durrenberger-a718b7167/" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-linkedin-circled-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://github.com/leon-xd" target="_blank" rel="noopener noreferrer">
+                            <img src="img\icons8-github-30.png">
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <p class="no-margins tiny-font-size">© 2022</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
+
 </body>
+<script src="js\sidebar_control.js"></script>

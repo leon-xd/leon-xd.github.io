@@ -16,7 +16,7 @@
     <!-- Change the favicon (tab icon) -->
     <link rel="icon" href="./img/favicon.ico" />
     <!-- Change the tab title -->
-    <title>My Personal Website</title>
+    <title>Leon Xin Durrenberger</title>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
@@ -24,31 +24,233 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-center header">
-        <ul class="nav">
-            <li class="nav-item">
-                <h2><a href="index.html">about</a></h2>
-            </li>
-            <li class="nav-item nav-item-selected">
-                <h2>projects</h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="experience.html">experience</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="resume.html">resume</a></h2>
-            </li>
-            <li class="nav-item">
-                <h2><a href="contact.html">contact</a></h2>
-            </li>
-        </ul>
-    </header>
+    <div class="page-container">
+        <header class="d-flex justify-content-center header">
+            <ul class="nav">
+                <li class="nav-item ">
+                    <h2><a href="index.html">about</a></h2>
+                </li>
+                <li class="nav-item nav-item-selected">
+                    <h2>projects</h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="experience.html">experience</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="resume.html">resume</a></h2>
+                </li>
+                <li class="nav-item">
+                    <h2><a href="contact.html">contact</a></h2>
+                </li>
+            </ul>
+        </header>
 
 
-    <div class="body">
-        <div class="container">
+        <div class="body">
+            <div class="sidebar">
+                <a onclick="ActivateClass(this)" class="active" href="#overview">Overview</a>
+                <a onclick="ActivateClass(this)" href="#crani-arm">Crani-Arm</a>
+                <a onclick="ActivateClass(this)" href="#robodog">Robodog</a>
+                <a onclick="ActivateClass(this)" href="#spacepainter">SpacePainter</a>
+                <a onclick="ActivateClass(this)" href="#army">Makers ARMy</a>
+                <a onclick="ActivateClass(this)" href="#stratos">Stratos</a>
+            </div>
+            <div class="content">
+                <div id="overview">
+                    <h1>Overview</h1>
+                    <p>
+                        This page is dedicated to the technical projects that I have spent time working on outside of
+                        jobs.
+                        Many projects come from the club that I was a part of in college,
+                        <a href="https://viterbimakers.usc.edu/">USC Makers</a>, while others come from class projects.
+                        For more on my leadership roles in Makers, please refer to the experience section of my website.
+                    </p>
+
+                </div>
+                <hr>
+                <div id="crani-arm">
+                    <h1>Crani-Arm</h1>
+                    <h2>Aug 2021 - May 2022</h2>
+                    <h3 class="margin-top-1em">Overview</h3>
+                    <p>
+                        The goal of Crani-Arm was to use
+                        <a href="https://www.ourpcb.com/emg-sensors.html">sEMG sensors</a> to detect finger motion and
+                        replicate it in a robotic hand.
+                        I was on the software team for this project, where we were responsible for creating the ML
+                        models, creating a testing framework, and collecting data.
+                        The hardware team was responsible for collecting and processing the sEMG signals, and
+                        actuating the servos which controlled the robotic arm.
+                        The mechanical team was responsible for designing and fabricating the mechanical hand which
+                        would eventually replicate the movements we desired.
+                        This was my final Makers project, and was the largest project that I have embarked on.
+                    </p>
+                    <h3>Testing Procedure</h3>
+                    <p>
+                        The first thing that we did to demonstrate the power of our EMG sensors was to build a demo that
+                        could demonstrate the responsiveness of sEMGs. To do this, we developed a clone of the game
+                        "Flappy Bird" using pygame that used signals from the sensors to tell the bird when to jump.
+                    </p>
+                    <iframe src="https://drive.google.com/file/d/1DLkUF1rMDHSfoy2UQe9mMExa-qN89zrQ/preview" width="640"
+                        height="480" allow="autoplay"></iframe>
+                    <p>
+                        Next, for the collection of data we needed automatic detection of hand position. Using the
+                        mediapipe library, we were able to determine hand position through our laptop camera. This
+                        helped us to automatically label training data for our machine learning algorithms.
+                    </p>
+                    <iframe src="https://drive.google.com/file/d/1P2ZSNSSPeYM4ffQPnvfXY7C7Sju9oMB6/preview" width="640"
+                        height="480" allow="autoplay"></iframe>
+                    <p>
+                        The next thing we had to do was collect data. By synchronizing data from our EMG sensors and
+                        camera data, we developed a script to synthesize training datasets.
+                    </p>
+                    <h3>LSTM Training</h3>
+                    <p>
+                        By splitting our datasets into training & testing sections, we trained neural networks to
+                        recognize and predictively label the specific hand motions.
+                        To accomplish this, we used the Tensorflow library for model development, along with
+                        scikitlearn, pandas, numpy, and matplotlib.
+                        Initially, we attempted to determine a binary
+                        "open/close" for each finger, but we quickly realized that our dataset did not have a high
+                        enough resolution to predict so many potential combinations.
+                        We moved towards recognizing specific, pre-determined hand positions.
+                    </p>
+                    <p>
+                        For the model, we decided to use a LSTM (Long short-term memory) network, which is a stateful
+                        recurrent model that is great for time-series data. During the process of training we spent a
+                        long time shifting parameters to determine what the best combination of parameters to predict
+                        the data would be.
+                    </p>
+                    <p><a href="https://colab.research.google.com/drive/1t1uGeCn07O4_UxxZzLvmbokXmkOKqD7Q?usp=sharing">Link
+                            to LSTM code</a>
+                    </p>
+                    <img src="img\Screenshot_1.png" style="max-width:80%;object-fit:contain;margin-bottom:1em">
+                    <h3>Video Demo</h3>
+                    <p>
+                        For our final demonstration, we used the LSTM to recognize hand positions from Rock Paper
+                        Scissors, and programmed the hand to always beat the user at the game.
+                    </p>
+                    <iframe src="https://drive.google.com/file/d/1NRm4c8UStjdWSRwEvG6tjTAK07X3Pp10/preview" width="640"
+                        height="480" allow="autoplay"></iframe>
+                    <p></p>
+                    <h3><a href="https://github.com/uscmakers/Crani-Arm">Repository</a></h3>
+
+                </div>
+                <hr>
+                <div id="robodog">
+                    <h1>Robodog</h1>
+                    <h2>Jan 2021 - May 2021</h2>
+                    <h3 class="margin-top-1em">Overview</h3>
+                    <p>
+                        Not all projects are destined to succeed, and nothing taught me that more than my work on
+                        Robodog.
+                        This was my Makers project during the second semester of my Junior year, which was a
+                        semester that was still online due to COVID.
+
+                        The project's scope was incredibly large: we wanted to build a functioning robotic dog à la
+                        <a href="https://www.youtube.com/watch?v=aFuA50H9uek&ab_channel=BostonDynamics">Boston
+                            Dynamics</a> that could walk and be controlled via an XBOX controller.
+                        A project that is this large, understaffed, and almost completely virtual is naturally doomed to
+                        fail, and although we didn't deliver on our original scope, I learned an incredible amount
+                        through the process of trying to create the robotic dog.
+                    </p>
+                    <h3>Software</h3>
+                    <p>
+                        Through an open source project called
+                        <a href="https://spotmicroai.readthedocs.io/en/latest/">Spot Micro</a>, we were able to base our
+                        code off of an existing repository.
+                        Setting this repository up and thorougly understanding the software behind it allowed me to be
+                        exposed to Raspberry Pis, ROS, and the Pybullet simulation library.
+                        In addition, hacking into an XBOX controller allowed me to familiarize myself with Bluetooth and
+                        Linux.
+                        I was able to successfully set up the software onto our robot, when we realized that there were
+                        problems with the mechanical assembly that unfortunately involved superglue, so my work could
+                        not progress any further.
+                    </p>
+                    <h3>Electrical</h3>
+                    <p>
+                        Because I was a team member in Los Angeles at the time that could
+                        work on the robot in person, I was also in charge of electrical assembly.
+                        This involved figuring out how to hook up a 12V battery to power a servo board with 12 different
+                        servos and a Raspberry Pi operating at different voltages.
+                        This allowed me to understand voltage regulators, and understand practical knowledge about
+                        stable current draw from batteries and the necessity of using proper gauged wires.
+                        Although I'm not sure this would be very hard for an electrical engineer, this was a great
+                        extension of my robotics knowledge from high school.
+                    </p>
+                    <h3>Showcase Video</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2QbV0bqf83M"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <hr>
+                <div id="spacepainter">
+                    <h1>Space Painter</h1>
+                    <h2>Aug 2020 - Nov 2020</h2>
+                    <h3 class="margin-top-1em">Overview</h3>
+                    <p>
+                        This project's objective was to build a robotic arm with a light attatchment at the end.
+                        We programmed it to move so when you took a long-exposure photograph of the arm, it would
+                        produce a stunning image.
+                        This team worked remotely during the COVID-19 pandemic, and I was on the software team.
+                        My responsibilities included writing software to modularize the stepper motor movement,
+                        and writing code to produce images.
+                    </p>
+                    <h3>Showcase Video</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rxhgba6kwTQ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <hr>
+                <div id="army">
+                    <h1>Makers ARMy</h1>
+                    <h2>Aug 2019 - Mar 2020</h2>
+                    <h3>Writeup coming soon!</h3>
+                </div>
+                <hr>
+                <div id="stratos">
+                    <h1>Stratos Speaker System</h1>
+                    <h2>Aug 2018 - May 2019</h2>
+                    <h3>Writeup coming soon!</h3>
+                </div>
+            </div>
 
         </div>
+
+        <footer class="d-flex justify-content-center footer">
+            <div class="container footer-container">
+                <div>
+                    <p class="no-margins tiny-font-size">Website made from scratch :D</p>
+                </div>
+                <ul class="nav">
+                    <li class="social-button">
+                        <a href="https://www.instagram.com/leon.durrenberger/?hl=en" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-instagram-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://www.linkedin.com/in/leon-durrenberger-a718b7167/" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="img\icons8-linkedin-circled-30.png">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a href="https://github.com/leon-xd" target="_blank" rel="noopener noreferrer">
+                            <img src="img\icons8-github-30.png">
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <p class="no-margins tiny-font-size">© 2022</p>
+                </div>
+            </div>
+
+
+        </footer>
     </div>
 
+
 </body>
+<script src="js\sidebar_control.js"></script>

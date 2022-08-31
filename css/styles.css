@@ -257,6 +257,25 @@ h3 {
     margin-top: 1em;
 }
 
+.download-button {
+    background-color: var(--light-beige);
+    color: var(--dark-blue);
+    padding: .6em;
+    margin: 1em 0;
+    border: 0;
+    box-shadow: 0 0 1em .25em rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    width: 7em;
+    background-color: var(--light-blue);
+    color: var(--light-beige);
+    display: flex;
+    justify-content: center;
+}
+
+.download-button:hover {
+    cursor: pointer;
+}
+
 input {
     background-color: var(--light-beige);
     color: var(--dark-blue);
@@ -312,6 +331,7 @@ textarea {
     margin-right: 20em;
     margin: 2em 20em 2em 20em;
     padding: 1em;
+    border: 2px solid var(--light-blue);
 }
 
 #success-form {
@@ -319,11 +339,6 @@ textarea {
 }
 
 #error-form {
-    display: none;
-    color: rgb(163, 82, 82);
-}
-
-#captcha-form {
     display: none;
     color: rgb(163, 82, 82);
 }

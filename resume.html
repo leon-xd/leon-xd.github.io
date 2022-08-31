@@ -21,19 +21,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <link href="./css/styles.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function DownloadResume(element) {
+            if (document.getElementById('hardware').checked) {
+                element.href = "files/Hardware Leon Durrenberger 2022 Fall Resume.pdf";
+            }
+            else if (document.getElementById('data-science').checked) {
+                element.href = "files/Data Science Leon Durrenberger 2022 Fall Resume.pdf";
+            }
+            else {
+                element.href = "files/Complete Leon Durrenberger 2022 Fall Resume.pdf";
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header class="d-flex justify-content-center header">
         <ul class="nav">
-            <li class="nav-item">
+            <li class="nav-item ">
                 <h2><a href="index.html">about</a></h2>
             </li>
             <li class="nav-item">
                 <h2><a href="project.html">projects</a></h2>
             </li>
             <li class="nav-item">
-                <h2><a href="music.html">experience</a></h2>
+                <h2><a href="experience.html">experience</a></h2>
+            </li>
+            <li class="nav-item">
+                <h2><a href="writing.html">writings</a></h2>
             </li>
             <li class="nav-item nav-item-selected">
                 <h2>resume</h2>
@@ -46,7 +63,57 @@
 
 
     <div class="body">
+        <form class="form-style">
+            <h2>I would like a resume for...</h2>
+            <div>
+                <input type="radio" id="hardware" name="resume-selector" value="hardware">
+                <label>Hardware</label>
+            </div>
+            <div>
+                <input type="radio" id="data-science" name="resume-selector" value="data-science">
+                <label>Data Science</label>
+            </div>
+            <div>
+                <input type="radio" id="general" name="resume-selector" value="general" checked="checked">
+                <label>General</label>
+            </div>
+            <div class="download-button">
+                <a id="resume-download" target="_blank" download="Leon X Durrenberger Resume.pdf"
+                    onclick="DownloadResume(this)">Download</a>
 
+            </div>
+        </form>
     </div>
 
+    <footer class="d-flex justify-content-center footer">
+        <div class="container footer-container">
+            <div>
+                <p class="no-margins tiny-font-size">Website made from scratch :D</p>
+            </div>
+            <ul class="nav">
+                <li class="social-button">
+                    <a href="https://www.instagram.com/leon.durrenberger/?hl=en" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="img\icons8-instagram-30.png">
+                    </a>
+                </li>
+                <li class="social-button">
+                    <a href="https://www.linkedin.com/in/leon-durrenberger-a718b7167/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="img\icons8-linkedin-circled-30.png">
+                    </a>
+                </li>
+                <li class="social-button">
+                    <a href="https://github.com/leon-xd" target="_blank" rel="noopener noreferrer">
+                        <img src="img\icons8-github-30.png">
+                    </a>
+                </li>
+            </ul>
+            <div>
+                <p class="no-margins tiny-font-size">© 2022</p>
+            </div>
+        </div>
+
+
+    </footer>
 </body>

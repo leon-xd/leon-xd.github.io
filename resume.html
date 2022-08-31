@@ -40,23 +40,23 @@
 <body>
     <header class="d-flex justify-content-center header">
         <ul class="nav">
-            <li class="nav-item ">
-                <h2><a href="index.html">about</a></h2>
+            <li class="nav-item" onclick="location.href='index.html';">
+                <h2>about</h2>
             </li>
-            <li class="nav-item">
-                <h2><a href="project.html">projects</a></h2>
+            <li class="nav-item" onclick="location.href='project.html';">
+                <h2>projects</h2>
             </li>
-            <li class="nav-item">
-                <h2><a href="experience.html">experience</a></h2>
+            <li class="nav-item" onclick="location.href='experience.html';">
+                <h2>experience</h2>
             </li>
-            <li class="nav-item">
-                <h2><a href="writing.html">writings</a></h2>
+            <li class="nav-item" onclick="location.href='writing.html';">
+                <h2>writings</h2>
             </li>
-            <li class="nav-item nav-item-selected">
+            <li class="nav-item nav-item-selected" onclick="location.href='resume.html';">
                 <h2>resume</h2>
             </li>
-            <li class="nav-item">
-                <h2><a href="contact.html">contact</a></h2>
+            <li class="nav-item" onclick="location.href='contact.html';">
+                <h2>contact</h2>
             </li>
         </ul>
     </header>
@@ -77,7 +77,7 @@
                 <input type="radio" id="general" name="resume-selector" value="general" checked="checked">
                 <label>General</label>
             </div>
-            <div class="download-button">
+            <div class="download-button" onclick="document.getElementById('resume-download').click()">
                 <a id="resume-download" target="_blank" download="Leon X Durrenberger Resume.pdf"
                     onclick="DownloadResume(this)">Download</a>
 
